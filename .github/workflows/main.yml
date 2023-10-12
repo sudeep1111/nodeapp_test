@@ -1,8 +1,10 @@
 name: Publish Docker image
 
 on:
-  push:
-    branches: ['main']
+  workflow_dispatch:  # Manually trigger the workflow
+    inputs:
+      manual_trigger:
+        description: 'Trigger the workflow manually'
 
 jobs:
   push_to_registry:
